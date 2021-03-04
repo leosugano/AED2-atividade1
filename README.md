@@ -1,2 +1,2 @@
 # AED2-atividade1
-Projeto da UFABC 
+Projeto em Java sobre hashing
