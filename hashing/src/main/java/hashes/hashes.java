@@ -10,7 +10,8 @@ package hashes;
  * @author leo_s
  */
 public class hashes {
-
+   
+    //MARK: - Hashes methods
     public static int division (Integer key, Integer m) throws incorrectInputException { 
         if (key < 0) {
             throw new incorrectInputException("Valor da chave menor que 0");
