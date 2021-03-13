@@ -19,6 +19,8 @@ public class main {
     }
     
     //MARK: Abaixo os dois metodos que chamam todos os pontos da 2.1
+    
+    //Todas as questões usando o método de divisão ficam dentro dessa função
     private static void hashFunctionWithDivision() {
         System.out.println("Método da divisão");
         line();
@@ -36,6 +38,7 @@ public class main {
         line();
     }
     
+    //Todas as questões usando o método de multiplicação ficam dentro dessa função
     private static void hashFunctionWithMult() {
         System.out.println("Método da multiplicação");
         line();
@@ -50,11 +53,13 @@ public class main {
     }
     
     //MARK: - Methods 
+    //Nessa função temos a parte dos primeiros pontos, passando para ele o valor de m, o valor para comparar e o tamanho da key 
+    //No exercicio temos o m variando de 11 e 12, o valor fixamente 3 e keysize de 0 a 100
     private static void divisionValues(Integer m, Integer value, Integer keySize) { //Ponto 2.1.a e 2.1.b
         for (int key = 0; key < keySize; key++) {
             try {
                if (hashes.division(key, m) == value) {
-                   System.out.println("A chave com valor " + value + ": " + key);
+                   System.out.println("A chave resultando no valor " + value + ": " + key);
                }
             } catch (incorrectInputException error) {
                 System.out.println(error);
@@ -63,6 +68,8 @@ public class main {
         }
     }
     
+    //Nessa função temos o count das colisoes, para isso criei apenas um onde passo um boleano, dessa forma verifico com método hash deve ser chamado
+    //Assim temos o valor m, o tamanho da key, o valor de a e o boolean para saber qual o metodo para ser chamado e comparado
     private static void colisionsCount(Integer m, Integer keySize, double a, Boolean itsDivision) {
         int[] array;
         array = new int[m];
@@ -83,13 +90,15 @@ public class main {
     }
     
     //MARK: - Aux functions
+    //Uma função para imprimir somente uma linha para dividir a resposta
     private static void line() {
       System.out.println("-----------------------------------------");
     }
 
+    //Uma função para imprimir um vetor passado 
     private static void printArray(int[] array) {
         for (int lenght = 0; lenght < array.length; lenght++) {
-            System.out.println("pos: " + lenght + " value: " + array[lenght]);
+           System.out.println("pos: " + lenght + " value: " + array[lenght]);
         } 
     }
 }

@@ -12,6 +12,8 @@ package hashes;
 public class hashes {
    
     //MARK: - Hashes methods
+    //Método de divisao hash
+    //Se o key for negativo nao precisa de throw pelo fato de nao entrar no FOR
     public static int division (Integer key, Integer m) throws incorrectInputException { 
         if (key < 0) {
             throw new incorrectInputException("Valor da chave menor que 0");
@@ -20,6 +22,8 @@ public class hashes {
         return Math.abs(key) % m; 
     }
     
+    //Método de multiplicação hash
+    //Se o key for negativo nao precisa de throw pelo fato de nao entrar no FOR
     public static int multiplication (Integer m, Integer key, double A) throws incorrectInputException {  
         if(m < 0) {
           throw new incorrectInputException("Valor de m menor que zero");
