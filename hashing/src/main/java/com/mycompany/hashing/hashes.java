@@ -11,11 +11,20 @@ package com.mycompany.hashing;
  */
 public class hashes {
 
-    public static int division (Integer key, Integer m) { 
+    public static int division (Integer key, Integer m) throws incorrectInputException { 
+        if (key < 0) {
+            throw new incorrectInputException("Key menor que 0");
+        }
+        
         return Math.abs(key) % m; 
     }
     
-    public static int hashKey(Integer tableSize, Integer key, double A) {  
+    public static int hashKey(Integer tableSize, Integer key, double A) throws incorrectInputException {  
+        if(tableSize < 0) {
+          throw new incorrectInputException("Tamanho da tabela menor que 0");
+        }
+        
         return (int) (tableSize * ((A * key) % 1));
     }  
 }
+
